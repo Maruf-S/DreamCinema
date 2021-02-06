@@ -11,24 +11,13 @@
 
 .nav-link{
     color: white;
-}
-
-a:hover{
     color: brown;
     text-decoration: none;
 }
 
-#icons{
-    margin-left: 15%;
-}
-
-#icons .nav-item{
-    margin:10% 30%;
-}
-
 #loginRegister{
-    margin-right: 15% ;
+    margin-right: 5% ;
 }
 #loginRegister .nav-item{
-    margin:10% 20%;
+    margin:10%;
 }
