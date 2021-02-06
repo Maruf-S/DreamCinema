@@ -7,6 +7,28 @@
 }
 .caption{
     background: rgba(0, 0, 0, 0.45);
-    /* top: 50%;
-    transform: translateY(-50%); */
+}
+
+.nav-link{
+    color: white;
+}
+
+a:hover{
+    color: brown;
+    text-decoration: none;
+}
+
+#icons{
+    margin-left: 15%;
+}
+
+#icons .nav-item{
+    margin:10% 30%;
+}
+
+#loginRegister{
+    margin-right: 15% ;
+}
+#loginRegister .nav-item{
+    margin:10% 20%;
 }
