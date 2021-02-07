@@ -1,5 +1,22 @@
 img{
-    margin-top: 50px;
+    margin-top: 0px;
     width: 100%;
     height: 500px;
+}
+iframe{
+    width: 100%;
+    height: 400px;
+}
+
+.nav-link{
+    color: white;
+    color: brown;
+    text-decoration: none;
+}
+
+#loginRegister{
+    margin-right: 5% ;
+}
+#loginRegister .nav-item{
+    margin:10%;
 }
