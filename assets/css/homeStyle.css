@@ -4,6 +4,9 @@
 body{
     font-family: 'Roboto', sans-serif;
   /* font-family: 'Poppins', sans-serif; */
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 
@@ -39,7 +42,7 @@ body{
     color: rgb(255, 255, 255);
 }
 .disButton{
-    border: 2px solid #364c75;
+    /* border: 2px solid #364c75; */
     background-color: #ffffffda; color: black;
     border-radius: 35px;
     font-style: italic;
@@ -100,7 +103,6 @@ body{
 .watch{
     background-color: orange;
     margin-left:  30%;
-    margin-bottom: 0;
 }
 
 .header{
@@ -164,5 +166,17 @@ body{
     
 }
 
+footer{
+    background-color: rgb(10, 1, 1);
+    
+}
 
+footer p, footer h5, footer a, footer h2, i{
+    color: white;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: tomato;
+}
 /*  */
