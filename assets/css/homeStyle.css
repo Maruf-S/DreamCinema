@@ -27,7 +27,7 @@ body{
 
 .parallax {
     background-image: url(../images/cine6.jpg);
-    min-height: 200px; 
+    height: 35rem;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -35,8 +35,8 @@ body{
 }
 .theatre{
     background: #3334352d;
-    padding-top: 15%;
-    padding-bottom: 15%;
+    padding-top: 13%;
+    padding-bottom: 10%;
     color: rgb(255, 255, 255);
 }
 .disButton{
