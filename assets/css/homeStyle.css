@@ -1,0 +1,23 @@
+.slide{
+    height: 35rem;
+    width: 100%;
+}
+.inner{
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.caption{
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.nav-link{
+    color: white;
+    color: brown;
+    text-decoration: none;
+}
+
+#loginRegister{
+    margin-right: 5% ;
+}
+#loginRegister .nav-item{
+    margin:10%;
+}
