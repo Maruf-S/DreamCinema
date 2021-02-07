@@ -21,3 +21,24 @@
 #loginRegister .nav-item{
     margin:10%;
 }
+
+.img-fluid{
+    height: 400px;
+}
+
+.card-body{
+    height: 100px;
+}
+
+.cont{
+    margin: 0 5%;
+}
+
+.watch{
+    background-color: orange;
+    margin: auto 30%;
+}
+
+.header{
+    font-style: italic;
+}
