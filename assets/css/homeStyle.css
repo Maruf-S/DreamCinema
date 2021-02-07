@@ -32,3 +32,63 @@ a:hover{
 #loginRegister .nav-item{
     margin:10% 20%;
 }
+.parallax {
+    background-image: url(../images/cine6.jpg);
+    min-height: 200px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.theatre{
+    background: #3334352d;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    color: rgb(255, 255, 255);
+}
+.disButton{
+    border: 2px solid #364c75;
+    background-color: #ffffffda; color: black;
+    border-radius: 35px;
+    font-style: italic;
+}
+.disButton:hover{
+    background-color: #0f1de9; color: rgb(253, 250, 250);
+}
+.bot{
+    background-color: #e66b1e;
+    height: 25rem;
+    font-style: italic;
+}
+.botr{
+    padding-top: 8%;
+    color: white;
+}
+.botc{
+    height: 8rem;
+    background: #33343598;
+    border: 2px solid, #33343575;
+    border-radius: 50px;
+}
+.cont{
+    padding-top: 1rem;
+}
+.subscribe{
+    background-image: url(../images/subs.jpg);
+    height: 30rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.adve{
+    color: #e66b1e;
+}
+.sub{
+    color: white;
+    padding-top: 10%;
+}
+.subButton{
+    background-color: red;
+    color: white;
+}
