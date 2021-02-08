@@ -21,4 +21,4 @@ function changeBackground(){
   document.querySelector("body").id = backgrounds[curIndex];
   curIndex = curIndex < backgrounds.length-1 ? ++curIndex : 0;
 }
-setInterval(changeBackground,4000);
+setInterval(changeBackground,5000);
