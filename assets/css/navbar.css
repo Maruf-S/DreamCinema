@@ -68,6 +68,16 @@
   opacity: 1;
   transform: translateY(-5px);
 }
+@media only screen and (max-width: 768px) {
+  .navTrigger{
+    display: block;
+  }
+  .navbar{
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}
+
 /* NAVBAR TRIGGER ANIMATION  BASED ON https://codemyui.com/simple-hamburger-menu-x-mark-animation/*/
 .navTrigger {
   display: none;
@@ -249,12 +259,66 @@
     transform: translateY(-9px) rotate(135deg);
   }
 }
-@media only screen and (max-width: 768px) {
-  .navTrigger{
-    display: block;
+/* BOUNCE */
+
+@keyframes bounce-animation {
+  12.5% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
   }
-  .navbar{
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+
+  25% {
+    -webkit-transform: translateY(-3.5px);
+    transform: translateY(-3.5px);
+  }
+
+  37.5% {
+    -webkit-transform: translateY(3px);
+    transform: translateY(3px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-2.5px);
+    transform: translateY(-2.5px);
+  }
+
+  60% {
+    -webkit-transform: translateY(2px);
+    transform: translateY(2px);
+  }
+
+  75% {
+    -webkit-transform: translateY(-1.5);
+    transform: translateY(-1.5);
+  }
+  100% {
+    -webkit-transform: translateY(1);
+    transform: translateY(1);
   }
 }
+.bounce {
+  animation-name: bounce-animation;
+  animation-duration:7s;
+}
+#len1{
+  animation-delay: 0s;
+}
+#len2{
+  animation-delay: 0.1s;
+}
+#len3{
+  animation-delay: 0.2s;
+}
+#len4{
+  animation-delay: 0.3s;
+}
+#len5{
+  animation-delay: 0.4s;
+}
+#len6{
+  animation-delay: 0.5s;
+}
+#len7{
+  animation-delay: 0.6s;
+}
+

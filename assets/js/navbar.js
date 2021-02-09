@@ -1,4 +1,16 @@
+
 $(document).ready(function () {
+      ///////////////////////
+      var i, stop;
+      i = 1;
+      stop = 7;
+      setInterval(function(){
+        if (i > stop){
+          return;
+        }
+        $('#len'+(i++)).toggleClass('bounce');
+      }, 500)
+      ////////////////
    $(window).scroll(function () {
       console.log($(this).scrollTop());
       if ($(this).scrollTop() < 70) {
@@ -15,3 +27,9 @@ $('.navTrigger').click(function () {
 //      console.log(e.target.classList);
 //      e.target.classList.toggle('active');
 //   });
+
+// $(function(){
+//    $(document).ready(function(){
+
+//    });
+//  });
