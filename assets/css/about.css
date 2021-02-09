@@ -13,3 +13,16 @@ iframe{
     color: brown;
     text-decoration: none;
 }
+
+footer a{
+    color: white;
+}
+
+footer a:hover{
+    color: brown;
+    text-decoration: none;
+}
+
+footer i{
+    color: white;
+}
