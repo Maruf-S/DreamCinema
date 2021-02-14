@@ -46,7 +46,8 @@ $('.navTrigger').click(function () {
    logOutButton.addEventListener("click",logOutUser);
    async function logOutUser(){
    eraseLoginCookie();
-   location.reload();
+   // location.reload();
+   window.location.href = 'Login.html';
    }
    //#endregion
 
