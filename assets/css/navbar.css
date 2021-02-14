@@ -355,3 +355,13 @@
   animation-delay: 0.6s;
 }
 
+@media only screen and (max-width: 768px) {
+  .navTrigger{
+    display: block;
+  }
+  .navbar{
+    background-color: rgb(0, 0, 0);
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}
