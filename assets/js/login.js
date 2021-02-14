@@ -53,3 +53,29 @@ async function addUser(e){
   } 
 }
 //#endregion
+
+//#region SignIn
+const signInForm = document.querySelector('#signinform'); 
+const signInEmail = signInForm.querySelector('.emailform');
+const signInPassword = signInForm.querySelector('.password');
+const signInConfirmPassword = signInForm.querySelector('.confirmPassword');
+signInForm.addEventListener('submit', logInUser);
+
+async function logInUser(e){
+  e.preventDefault();
+  let response = await SignInUser(signInEmail.value,signInPassword.value);
+  switch(response) {
+    case 1:
+      alert("Successfully signedInUser");
+      break;
+    case 2:
+      alert("Incorrect Email or password")
+      break;
+    case 10:
+      alert("Unknown Error occurred")
+        break;  
+    // default:
+    //   // code block
+  } 
+}
+//#endregion
