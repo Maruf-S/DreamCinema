@@ -1,7 +1,7 @@
 // for the New item part
 
 var tabButtons=document.querySelectorAll(".tabContainer .buttonContainer button");
-  var tabPanels=document.querySelectorAll(".tabContainer  .tabPanel");
+var tabPanels=document.querySelectorAll(".tabContainer  .tabPanel");
 
   function showPanel(panelIndex,colorCode) {
       tabButtons.forEach(function(node){

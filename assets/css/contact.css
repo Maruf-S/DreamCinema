@@ -16,7 +16,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url("bg_1.jpg");
+    background: url("../images/background/contactbg.jpg");
     background-size: cover;
 }
 
@@ -25,13 +25,17 @@
     text-align: center;
 }
 
-.contact .content h2{
-    font-size: 36px;
+.contact .content h2 {
+    font-size: 66px;
     font-weight: 500;
     color: #fff;
     margin-top: 50px;
-
 }
+
+.contact .content p {
+    font-size: 16px;
+}
+
 .contact .content p{
     font-weight: 300;
     color: #fff;
@@ -85,11 +89,19 @@
     color:#00bcd4;
 }
 
+.container .contactInfo .box  .text a{
+    text-decoration: none;
+    color: #fff;
+}
+.container .contactInfo .box  .text a:hover{
+    color: rgb(95, 27, 27)
+}
+
 .contactForm {
     width: 40%;
     padding: 40px;
     background: #fff;
-    box-shadow:#00bcd4 -5px 5px, rgba(92, 137, 189, 0.3) -10px 10px, rgba(70, 156, 190, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    box-shadow:#470a0a -5px 5px, rgba(92, 137, 189, 0.3) -10px 10px, rgba(70, 156, 190, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
     /* box-shadow: rgba(182, 0, 0, 0.56) 0px 22px 70px 4px; */
     /* box-shadow: rgb(129, 38, 38) 0px 20px 30px -10px; */
 }
