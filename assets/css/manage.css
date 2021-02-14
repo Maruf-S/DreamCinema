@@ -1,0 +1,47 @@
+body{
+    margin-top:20px;
+    color: #bcd0f7;
+    background: #1A233A;
+}
+.card, .list-group-item-action{
+    color: #bcd0f7;
+    background: #1A233A;
+}
+
+.ui-w-80 {
+    width: 80px !important;
+    height: auto;
+}
+
+.btn-default {
+    color: rgb(10, 10, 10);
+    background-color: #f2f3f7;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+
+
+.card {
+    background: #272E48;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+.form-control {
+    border: 1px solid #596280;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #1A233A;
+    color: #bcd0f7;
+}

@@ -40,7 +40,7 @@ body{
 }
 
 .parallax {
-    background-image: url(../images/cine6.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/cine6.jpg);
     height: 35rem;
     background-attachment: fixed;
     background-position: center;
