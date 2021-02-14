@@ -8,9 +8,36 @@ body{
     background: #1A233A;
 }
 
+.inputType:focus {
+    color: #bcd0f7;
+    background-color: #1A233A;
+  
+  }
+.tab, .tab-pane{
+    height: 30rem;
+}
+
 .ui-w-80 {
     width: 80px !important;
     height: auto;
+}
+.cancel, .saveChange{
+    margin-left: 36rem;
+}
+
+.saveChangeG{
+    margin-top: 4rem;
+    margin-left: 36rem;
+}
+.saveChangeC{
+    margin-top: 10rem;
+    margin-left: 36rem;
+}
+.cnacelG {
+    margin-top: 4rem;
+}
+.cnacelC{
+    margin-top: 10rem;
 }
 
 .btn-default {
@@ -27,7 +54,6 @@ label.btn {
 }
 .btn-danger{
     margin-top: 1%;
-    margin-left: 8%;
 }
 .email1{
     color: white;

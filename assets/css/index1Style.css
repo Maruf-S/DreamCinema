@@ -41,7 +41,8 @@ body{
 
 .parallax {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/cine6.jpg);
-    height: 35rem;
+    height: 100%;
+    position: relative;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -81,8 +82,9 @@ body{
     border-radius: 50px;
 }
 .subscribe{
-    background-image: url(../images/subs.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/subs.jpg);
     height: 30rem;
+    position: relative;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -138,7 +140,6 @@ body{
     margin-top: 2%;
     margin-left: 5%;
     margin-right: 5%;
-
 }
 
 
@@ -158,11 +159,11 @@ body{
     color: yellow;
 }
 .starr{
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.678);
     color: rgb(255, 255, 255);
 }
 .likee{
-    background-color: #0f1de9;
+    background-color: #0f1de9e5;
     color: white;
 }
 .tabContainer .buttonContainer button{
