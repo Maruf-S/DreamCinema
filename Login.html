@@ -90,18 +90,18 @@
             </div>
             <div class="signup-link">Don't have account? <a href="">Signup now</a></div>
           </form>
-          <form action="#" class="signup">
+          <form action="#" class="signup" id="signupform">
             <div class="field">
               <span class="fa fa-user icons" aria-hidden="true"></span>
-              <input type="text" placeholder="Email Address" required>
+              <input type="email" placeholder="Email Address" required class="emailform">
             </div>
             <div class="field">
               <span class="fa fa-lock icons" aria-hidden="true"></span>
-              <input type="password" placeholder="Password" required>
+              <input type="password" placeholder="Password" required class="password">
             </div>
             <div class="field">
               <span class="fa fa-lock icons" aria-hidden="true"></span>
-              <input type="password" placeholder="Confirm password" required>
+              <input type="password" placeholder="Confirm password" required class="confirmPassword">
             </div>
             <div class="field btn">
               <div class="btn-layer"></div>
@@ -122,6 +122,9 @@
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
   <script src="assets/js/navbar.js"></script>
+
+  <script src="https://unpkg.com/localbase/dist/localbase.dev.js"></script>
+  <script src="assets/js/Backend/Login_Signup.js"></script>
 </body>
 
 </html>

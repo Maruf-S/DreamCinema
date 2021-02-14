@@ -22,3 +22,34 @@ function changeBackground(){
   curIndex = curIndex < backgrounds.length-1 ? ++curIndex : 0;
 }
 setInterval(changeBackground,5000);
+//#region SignUp
+const signUpForm = document.querySelector('#signupform'); 
+const signUpEmail = signUpForm.querySelector('.emailform');
+const signUpPassword = signUpForm.querySelector('.password');
+const signUpConfirmPassword = signUpForm.querySelector('.confirmPassword');
+signUpForm.addEventListener('submit', addUser);
+
+async function addUser(e){
+  e.preventDefault();
+  console.log(signUpForm);
+  if(!(signUpConfirmPassword.value===signUpPassword.value)){
+    alert("Password and ConfirmPassword are not the same!");
+    return;
+  }
+  let response = await SignUpUser(signUpEmail.value,signUpPassword.value);
+  alert(response);
+  switch(response) {
+    case 1:
+      alert("Successfully signedUpUser");
+      break;
+    case 2:
+      alert("Duplicate User")
+      break;
+    case 10:
+      alert("Unknown Error occurred")
+        break;  
+    // default:
+    //   // code block
+  } 
+}
+//#endregion

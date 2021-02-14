@@ -12,7 +12,6 @@ $(document).ready(function () {
       }, 500)
       ////////////////
    $(window).scroll(function () {
-      console.log($(this).scrollTop());
       if ($(this).scrollTop() < 70) {
          $(".navbar").removeClass("navbarNotSoFat");
       } else {
