@@ -15,3 +15,19 @@ $('.navTrigger').click(function () {
 //      console.log(e.target.classList);
 //      e.target.classList.toggle('active');
 //   });
+<<<<<<< Updated upstream
+=======
+
+// $(function(){
+//    $(document).ready(function(){
+
+//    });
+//  });
+Swal.fire({
+   position: 'top-end',
+   icon: 'success',
+   title: 'Your work has been saved',
+   showConfirmButton: false,
+   timer: 1500
+ })
+>>>>>>> Stashed changes
