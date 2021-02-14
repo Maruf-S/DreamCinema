@@ -157,5 +157,5 @@ function eraseLoginCookie() {
     createLoginCookie("", -1);
 }
 // //#endregion
-ChangeEmail('m@m.com',`mdsadddddddddddddddddddddddd@m.com`,`4`);
-deleteUser(`mdsadddddddddddddddddddddddd@m.com`,'4');
+// ChangeEmail('m@m.com',`mdsadddddddddddddddddddddddd@m.com`,`4`);
+// deleteUser(`mdsadddddddddddddddddddddddd@m.com`,'4');
