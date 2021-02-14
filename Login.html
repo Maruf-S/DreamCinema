@@ -12,12 +12,11 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/navbar.css">
   <link rel="stylesheet" href="assets/css/login.css">
-  <style>
-  </style>
 </head>
 
 <body>
 <div class="entireNav">
+  
   <span class="navTrigger" data-toggle="collapse" data-target="#navbarNav">  
     <i></i>
     <i></i>
@@ -54,7 +53,28 @@
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link hoverable" href="Login.html">Login | Register</a>
+          <a class="nav-link hoverable loginRegister" href="Login.html">Login | Register</a>
+          <div class="dropdown show profileDropdown userProfile">
+            <a class="btn dropdown-toggle profileDropdown" 
+            href="#" role="button" id="dropdownMenuLink" 
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+              <i class="fa fa-user-circle userIcon pr-1"></i>
+              <span class="userIconName text-white emailID">example@example.com</span>
+            </a>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right menuDropdown">
+              <a class="dropdown-item manageAccount" href="#">
+                <i class="fa fa-wrench pr-1" style="font-size: larger;">
+                </i>
+                Manage Account
+              </a>
+
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item logoutUser" href="#">
+                <i class="fa fa-power-off pr-2" style="font-size: larger;">
+                </i>Log Out</a>
+            </div>
+          </div>
         </li>
       </ul>
   </div>
@@ -114,17 +134,19 @@
   </div>
   <!-- <div class="rect" id="green"></div>
   <div class="rect" id="blue"></div> -->
-  <script src="assets/js/login.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script>
   <script src="assets/js/navbar.js"></script>
-
   <script src="https://unpkg.com/localbase/dist/localbase.dev.js"></script>
+  <script src="assets/js/login.js"></script>
   <script src="assets/js/Backend/Login_Signup.js"></script>
+  <script>
+    </script>
 </body>
 
 </html>

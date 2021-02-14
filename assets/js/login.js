@@ -33,20 +33,29 @@ async function addUser(e){
   e.preventDefault();
   console.log(signUpForm);
   if(!(signUpConfirmPassword.value===signUpPassword.value)){
-    alert("Password and ConfirmPassword are not the same!");
+    swal("Error!", "Password and confirm password do not match!", "error");
     return;
   }
   let response = await SignUpUser(signUpEmail.value,signUpPassword.value);
-  alert(response);
   switch(response) {
     case 1:
-      alert("Successfully signedUpUser");
+      await SignInUser(signUpEmail.value,signUpPassword.value);
+      window.location.href = 'index.html';
+      // alert("Successfully signedUpUser");
+      // Swal.fire({
+      //   icon: 'error',
+      //   title: 'Oops...',
+      //   text: 'Something went wrong!',
+      //   footer: '<a href>Why do I have this issue?</a>'
+      // })
       break;
     case 2:
-      alert("Duplicate User")
+      swal("Error!", "This email already belongs to an account!", "error");
+      // alert("Duplicate User")
       break;
     case 10:
-      alert("Unknown Error occurred")
+      swal("Error!", "An Unknown error occoured, Please refresh the page!", "error");
+      // alert("Unknown Error occurred")
         break;  
     // default:
     //   // code block
@@ -66,16 +75,18 @@ async function logInUser(e){
   let response = await SignInUser(signInEmail.value,signInPassword.value);
   switch(response) {
     case 1:
-      alert("Successfully signedInUser");
+      // alert("Successfully signedInUser");
+      window.location.href = 'index.html';
       break;
     case 2:
-      alert("Incorrect Email or password")
+      swal("Error!", "Incorrect username or password!", "error");
       break;
     case 10:
-      alert("Unknown Error occurred")
+      swal("Error!", "An Unknown error occoured, Please refresh the page!", "error");
         break;  
     // default:
     //   // code block
   } 
 }
 //#endregion
+

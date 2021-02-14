@@ -139,6 +139,39 @@
 .logo{
   height: 40px;
 }
+.userIcon{
+  font-size: x-large;
+  color: #ffffff;
+}
+.userIconName{
+  text-decoration: none;
+  font-family: 'Quicksand', 'Roboto';
+  font-size: medium;
+  margin-bottom: 20px;
+}
+.profileDropdown{
+  background-color: rgba(0,0,0,0);
+  /* background-color: rgba(221, 214, 214, 0.144); */
+  border-radius: 5px;
+  /* overflow: hidden; */
+}
+.menuDropdown{
+  background-color: rgba(221, 214, 214, 0.349);
+}
+.dropdown-item{
+  color: white !important;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  color:  rgba(0,0,0,1) !important;
+}
+.loginRegister{
+  display: none;
+}
+.userProfile{
+  display: none;  
+}
+/* */
 @-webkit-keyframes inM {
   50% {
     -webkit-transform: rotate(0deg);
@@ -296,10 +329,10 @@
     transform: translateY(1);
   }
 }
-.bounce {
+/* .bounce {
   animation-name: bounce-animation;
   animation-duration:7s;
-}
+} */
 #len1{
   animation-delay: 0s;
 }
