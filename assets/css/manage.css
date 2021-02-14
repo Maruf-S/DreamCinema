@@ -25,9 +25,13 @@ label.btn {
 .btn {
     cursor: pointer;
 }
-
-
-
+.btn-danger{
+    margin-top: 1%;
+    margin-left: 8%;
+}
+.email1{
+    color: white;
+}
 .card {
     background: #272E48;
     -webkit-border-radius: 5px;
