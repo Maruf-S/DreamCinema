@@ -18,4 +18,8 @@ var tabPanels=document.querySelectorAll(".tabContainer  .tabPanel");
 showPanel(0,'');
 
 
+$('.carousel_slider').carousel({
+    interval: false,
+  });
+
 // end
