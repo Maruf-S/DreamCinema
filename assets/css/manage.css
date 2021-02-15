@@ -3,6 +3,9 @@ body{
     color: #bcd0f7;
     background: #1A233A;
 }
+.topOne{
+    background-color: #1A233A;
+}
 .card, .list-group-item-action{
     color: #bcd0f7;
     background: #1A233A;
@@ -94,5 +97,10 @@ label.btn {
 .list-group-item-action:hover{
     background-color: #85a0d8;
     color: #1A233A;
+    border-color:#1A233A;
     /* color: red !important; */
+}
+.bodyContainer{
+    /* style="border: 2px #272e48 solid;" */
+    box-shadow: -1px 4px 20px 0px rgba(0,0,0,0.75);
 }
