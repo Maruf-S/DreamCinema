@@ -6,6 +6,8 @@ const oldEmail = generalForm.querySelector('.oldEmail');
 const phoneNo = generalForm.querySelector('.phoneNumber');
 const newEmail = generalForm.querySelector('.newEmail')
 generalForm.addEventListener('submit', Email_Change);
+
+if(!readLoginCookie())window.location.href = 'Login.html';
 //#region Load old values
 loadExistingData();
 async function loadExistingData(){
