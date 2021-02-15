@@ -7,16 +7,19 @@
     box-sizing: border-box;
      
 }
+body{
+    
+    background-image: url("../images/background/contactbg1.jpg");
+}
 
 .contact{
     position: relative;
-    min-height: 100vh;
     padding: 50px 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url("../images/background/contactbg.jpg");
+    
     background-size: cover;
 }
 
@@ -135,7 +138,27 @@
 
 }
 
+.contactForm .inputBox span{
+    position: absolute;
+    left: 0;
+    padding:  5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
 
+.contactForm .inputBox input:focus ~ span,
+.contactForm .inputBox input:valid ~ span,
+.contactForm .inputBox textarea:focus ~ span,
+.contactForm .inputBox textarea:valid ~ span
+{
+    color: #00bcd4;
+    font-size: 12px;
+    transform: translateY(-20px);
+
+}
 
 
 
