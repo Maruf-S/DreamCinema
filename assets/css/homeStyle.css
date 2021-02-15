@@ -8,8 +8,16 @@ body{
   padding: 0;
   border: 0;
 }
+.main-cont {
+    height: fit-content;
+}
 
-
+.carousel-inner {
+overflow: hidden;
+}
+.carousel {
+overflow: hidden;
+}
 
 .slide{
     height: 35rem;
@@ -28,7 +36,7 @@ body{
 }
 
 .parallax {
-    background-image: url(../images/cine6.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/cine6.jpg);
     height: 35rem;
     background-attachment: fixed;
     background-position: center;
@@ -68,7 +76,7 @@ body{
     border-radius: 50px;
 }
 .subscribe{
-    background-image: url(../images/subs.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../images/subs.jpg);
     height: 30rem;
     background-attachment: fixed;
     background-position: center;
@@ -141,13 +149,16 @@ body{
     height: 10%;
     
 }
-.starr{
-    background-color: rgb(255, 255, 0);
-    color: rgb(0, 0, 0);
+.stAr {
+    color: yellow;
 }
-.likee{
-    background-color: #0f1de9;
-    color: white;
+.starr {
+background-color: rgba(0, 0, 0, 0.575);
+color: rgb(255, 255, 255);
+}
+.likee {
+background-color: #0f1de9e3;
+color: white;
 }
 .tabContainer .buttonContainer button{
     width: 12%;
@@ -161,15 +172,34 @@ body{
     font-size: 18px;
     
 }
-.tabContainer .buttonContainer button:hover{
-    border-bottom: 3px solid #2252d8;
+.tabContainer .buttonContainer button:hover {
+    border-bottom: 3px solid #000000;
 }
 
-.tabContainer .buttonContainer button:focus{
-    background-color:#8fa7e9;
+.tabContainer .buttonContainer button:focus {
+    border-bottom: 3px solid #0b3bc0;
+    border-radius: 5%;
 }
-.tabContainer .tabPanel{
+.tabContainer .tabPanel {
     box-sizing: border-box;
     font-family: sans-serif;
     font-size: 22px;
+}
+#button1 {
+    border-right: black solid 1px;
+}
+#button2 {
+    border-right: black solid 1px;
+}
+#button3 {
+    border-right: black solid 1px;
+}
+  
+@media screen and (max-width: 1000px) {
+    .counterNum {
+        font-size: 1rem;
+    }
+    .bot {
+        height: 15rem;
+    }
 }
