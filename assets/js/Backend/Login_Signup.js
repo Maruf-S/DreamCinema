@@ -71,6 +71,7 @@ async function ChangePassword(email, oldPsw, newPsw) {
                     console.log(`UNKNOWN ERROR OCCOURED ${error}`);
                     return 10;
                 });
+                alert()
                 console.log("CHANGE SUCCESSfUL");
                 return 1;
                 //return "Password change successful";
@@ -86,36 +87,85 @@ async function ChangePassword(email, oldPsw, newPsw) {
         return 10;
     }
 }
-async function ChangeEmail(oldEmail,newEmail,password) {
+async function ChangeEmail(oldEmail,newEmail,phoneNumber,password) {
     try {
-        return await db.collection('users').doc({
-            email: oldEmail,
-            password : password
-        }).get().then(document => {
-            if (document) { //user exists
-                console.log("USER EXISTS PROCEDING CHANGE");
-                db.collection('users').doc({
-                    email: oldEmail
-                }).update({
-                    email: newEmail
-                }).catch(error => {
-                    console.log(`UNKNOWN ERROR OCCOURED ${error}`);
-                    return 10;
-                });
-                console.log("Email change successufl")
-                return 1;
-                //return "Email change successful";
-            } else {
-                console.log(`password mismatch`);
-                return 2;
-                //Password mismatch
+        if(oldEmail==null || newEmail == null){
+            return 10;
+        }
+        return await DoesUserExist(newEmail).then(answer =>{
+            if(answer) {
+                //A USER ALREADY EXISTS with this email
+                return 3;
             }
-        })
-    } catch (error) {
+            else{
+                return db.collection('users').doc({
+                    email: oldEmail,
+                    password : password
+                }).get().then(document => {
+                    if (document) { //user exists
+                        console.log("USER EXISTS PROCEDING CHANGE");
+                        db.collection('users').doc({
+                            email: oldEmail
+                        }).update({
+                            email: newEmail,
+                            phone:phoneNumber 
+                        }).catch(error => {
+                            console.log(`UNKNOWN ERROR OCCOURED ${error}`);
+                            return 10;
+                        });
+                        console.log("Email change successufl")
+                        return 1;
+                        //return "Email change successful";
+                    } else {
+                        console.log(`password mismatch`);
+                        return 2;
+                        //Password mismatch
+                    }
+                });
+            }
 
+        })
+
+    } catch (error) {
         console.log(`UNKNOWN ERROR OCCOURED ${error}`);
         return 10;
     }
+}
+
+async function ChangeSocials(email,twitter,insta){
+    return db.collection('users').doc({
+        email: email
+    }).update({
+        twitter: twitter,
+        instagram:insta
+    }).then(
+        (e) =>{
+            console.log("CHANGE SUCCESSfUL");
+            return 1;
+            //return "Operation successful";
+        }
+    ).catch(error => {
+        console.log(`UNKNOWN ERROR OCCOURED ${error}`);
+        return 10;
+    });
+
+}
+async function Changepreferences(email,newsLetter){
+    return db.collection('users').doc({
+        email: email
+    }).update({
+        newsLetter:newsLetter
+    }).then((e) =>{
+            console.log("CHANGE SUCCESSfUL");
+            return 1;
+            deleteU
+            //return "Operation successful";
+        }
+    ).catch(error => {
+        console.log(`UNKNOWN ERROR OCCOURED ${error}`);
+        return 10;
+    });
+
 }
 async function deleteUser(email,password){
    return db.collection('users')
@@ -130,6 +180,40 @@ async function deleteUser(email,password){
     //Password mismatch
   });
     // logOutUser();
+}
+//Helper function for email change
+async function DoesUserExist(email) {
+    //1,2,10 are error codes
+    try {
+        return await db.collection('users').doc({
+            email: email
+        }).get().then(document => {
+            if (document == undefined) {
+                return false;
+                //User doesnot exist
+            } else {
+                return true;
+                //User does exist
+            }
+        })
+
+    } catch (error) {
+        return true;
+    }
+}
+//return user info without the password
+async function getuser(email){
+    try {
+        return await db.collection('users').doc({
+            email: email
+        }).get().then(document => {
+            document['password'] = null;
+            return document;
+        })
+
+    } catch (error) {
+        return null;
+    }
 }
 //#endregion 
 //#region LoginCookie
