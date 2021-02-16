@@ -1,175 +1,234 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
 
-body{
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
   /* font-family: 'Poppins', sans-serif; */
   margin: 0;
   padding: 0;
   border: 0;
 }
 
-
-
-.slide{
-    height: 35rem;
+.carouselImage{
     width: 100%;
+    height: 36rem;
 }
-.inner{
-    background-color: rgba(0, 0, 0, 0.4);
-}
-.caption{
-    background: rgba(0, 0, 0, 0.45);
+@media screen and (max-width: 768px) {
+    .carouselImage {
+      height: 25rem;
+    }
+  }
+
+.main-cont {
+  height: fit-content;
 }
 
-.nav-link{
-    color: white;
-    text-decoration: none;
+.carousel-inner {
+  overflow: hidden;
+}
+.carousel {
+  overflow: hidden;
+}
+.slide {
+  height: 35rem;
+  width: 100%;
+}
+.inner {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.caption {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
 }
 
 .parallax {
-    background-image: url(../images/cine6.jpg);
-    height: 35rem;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover
-}
-.theatre{
-    background: #3334352d;
-    padding-top: 13%;
-    padding-bottom: 10%;
-    color: rgb(255, 255, 255);
-}
-.disButton{
-    /* border: 2px solid #364c75; */
-    background-color: #ffffffda; color: black;
-    border-radius: 35px;
-    font-style: italic;
-}
-.disButton:hover{
-    background-color: #0f1de9; color: rgb(253, 250, 250);
-}
-.bot{
-    margin-top: 2rem;
-    background-color: #0047ab;
-
-    height: 25rem;
-    font-style: italic;
-}
-.botr{
-    padding-top: 8%;
-    color: white;
-}
-.botc{
-    height: 8rem;
-    background: #33343549;
-    border: 2px solid, #33343575;
-    border-radius: 50px;
-}
-.subscribe{
-    background-image: url(../images/subs.jpg);
-    height: 30rem;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.adve{
-    color: #e66b1e;
-}
-.sub{
-    color: white;
-    padding-top: 10%;
-}
-.subButton{
-    background-color: red;
-    color: white;
-}
-
-.img-fluid{
-    height: 350px;
-}
-
-.card-body{
-    height: 100%;
-}
-
-.cont{
-    margin: 0 5%;
-}
-.contt{
-    padding-top: 1rem;
-}
-
-.watch{
-    background-color: orange;
-    margin-left:  30%;
-}
-
-.header{
-    font-style: italic;
-}
-.subInner{
-    width: 30rem;
-}
-
-.carousel-inner{
-    overflow: visible;
-}
-.arow{
-    margin-top: 1%;
-    margin-left: 47%;
-}
-.tvshow{
-    margin-top: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/cine6.jpg);
+  height: 35rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
 
 }
 
+.theatre {
+  background: #3334352d;
+  padding-top: 13%;
+  padding-bottom: 10%;
+  color: rgb(255, 255, 255);
+}
+.disButton {
+  /* border: 2px solid #364c75; */
+  background-color: #ffffffda;
+  color: black;
+  border-radius: 35px;
+  font-style: italic;
+}
+.disButton:hover {
+  background-color: #0f1de9;
+  color: rgb(253, 250, 250);
+}
+.bot {
+  margin-top: 2rem;
+  background-color: #0047ab;
+
+  height: 25rem;
+  font-style: italic;
+}
+.botr {
+  padding-top: 8%;
+  color: white;
+}
+
+.botc {
+  height: 8rem;
+  background: #33343549;
+  border: 2px solid, #33343575;
+  border-radius: 50px;
+}
+.subscribe {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/subs.jpg);
+  height: 30rem;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+}
+.adve {
+  color: #e66b1e;
+}
+.sub {
+  color: white;
+  padding-top: 10%;
+}
+.subButton {
+  background-color: red;
+  color: white;
+}
+
+.img-fluid {
+  height: 350px;
+}
+
+.card-body {
+  height: 100%;
+}
+
+.cont {
+  margin: 0 5%;
+}
+.contt {
+  padding-top: 1rem;
+}
+
+.watch {
+  background-color: orange;
+  margin-left: 30%;
+}
+
+.header {
+  font-style: italic;
+}
+.subInner {
+  width: 30rem;
+}
+
+.carousel-inner {
+  overflow: visible;
+}
+.arow {
+  margin-top: 1%;
+  margin-left: 47%;
+}
+.tvshow {
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
 
 /* new items style */
 
+.tabContainer {
+  height: 600px;
+  margin: auto 5%;
+}
+.tabContainer .buttonContainer {
+  height: 10%;
+}
+.stAr {
+  color: yellow;
+}
+.starr {
+  background-color: rgba(0, 0, 0, 0.575);
+  color: rgb(255, 255, 255);
+}
+.likee {
+  background-color: #0f1de9e3;
+  color: white;
+}
+.tabContainer .buttonContainer button {
+  width: 12%;
+  height: 100%;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
 
-.tabContainer{
-    
-    height: 600px;
-    margin: auto 5%;
+  font-family: sans-serif;
+  font-size: 18px;
 }
-.tabContainer .buttonContainer{
-    height: 10%;
-    
-}
-.starr{
-    background-color: rgb(255, 255, 0);
-    color: rgb(0, 0, 0);
-}
-.likee{
-    background-color: #0f1de9;
-    color: white;
-}
-.tabContainer .buttonContainer button{
-    width: 12%;
-    height: 100%;
-    float: left;
-    border: none;
-    outline:none;
-    cursor: pointer;
-    
-    font-family: sans-serif;
-    font-size: 18px;
-    
-}
-.tabContainer .buttonContainer button:hover{
-    border-bottom: 3px solid #2252d8;
+.tabContainer .buttonContainer button:hover {
+  border-bottom: 3px solid #0b3bc0;
 }
 
-.tabContainer .buttonContainer button:focus{
-    background-color:#8fa7e9;
+.tabContainer .buttonContainer button:focus {
+  border-bottom: 3px solid #000000;
+  border-radius: 5%;
 }
-.tabContainer .tabPanel{
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-size: 22px;
+.tabContainer .tabPanel {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 22px;
+}
+#button1 {
+  border-right: black solid 1px;
+}
+#button2 {
+  border-right: black solid 1px;
+}
+#button3 {
+  border-right: black solid 1px;
+}
+
+footer {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: brown;
+  text-decoration: none;
+}
+
+footer i {
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .counterNum {
+    font-size: 1rem;
+  }
+  .bot {
+    height: 15rem;
+  }
 }

@@ -10,14 +10,10 @@ footer a:hover{
 footer i{
     color: white;
 }
-
-.card{
-    height: 100%;
+#copyRight{
+    margin: 0;
 }
 
-.topImage{
-    position: relative;
-}
 
 .text-block {
     position: absolute;
@@ -29,7 +25,6 @@ footer i{
   footer {
     background-color: black;
     color: white;
-    margin-top:100px;
     }
     
     footer a {
