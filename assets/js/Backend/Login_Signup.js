@@ -92,12 +92,30 @@ async function ChangeEmail(oldEmail,newEmail,phoneNumber,password) {
         if(oldEmail==null || newEmail == null){
             return 10;
         }
+        //CHANGE PHONE NUMBER ONLY
+        if(!newEmail){
+            return await db.collection('users').doc({
+                email: oldEmail,
+                password:password
+            }).update({
+                phone:phoneNumber 
+            }).then((e)=>{
+                //PHONE NUMBER ONLY CHANGE WAS SUCCESSFUL;
+                return 4;
+            }).catch(error => {
+                //Password Mismatch
+                console.log(`UNKNOWN ERROR OCCOURED ${error}`);
+                return 2;
+            });
+        }
+        //CHANGE BOTH THE EMAIL AND PHONE NO
         return await DoesUserExist(newEmail).then(answer =>{
             if(answer) {
                 //A USER ALREADY EXISTS with this email
                 return 3;
             }
             else{
+                //Change onlythe phone number
                 return db.collection('users').doc({
                     email: oldEmail,
                     password : password
@@ -240,6 +258,4 @@ function readLoginCookie() {
 function eraseLoginCookie() {
     createLoginCookie("", -1);
 }
-// //#endregion
-// ChangeEmail('m@m.com',`mdsadddddddddddddddddddddddd@m.com`,`4`);
-// deleteUser(`mdsadddddddddddddddddddddddd@m.com`,'4');
+//#endregion
