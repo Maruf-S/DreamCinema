@@ -102,7 +102,7 @@ body{
 }
 
 .contactForm {
-    width: 40%;
+    width: 60%;
     padding: 40px;
     background: #fff;
     box-shadow:#470a0a -5px 5px, rgba(92, 137, 189, 0.3) -10px 10px, rgba(70, 156, 190, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
@@ -174,13 +174,15 @@ body{
 
 @media(max-width: 991px){
     .contact{
-        padding: 50px;
+        padding: 5px;
     }
     .container{
         flex-direction: column;
-    }
-    .container .contactInfo{
         margin-bottom: 40px;
+    }
+    
+    .contactInfo{
+        margin-bottom: 20px;
     }
     .container{
         width: 100%;
