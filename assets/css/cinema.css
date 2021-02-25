@@ -170,7 +170,7 @@ ul{
 }
 /*CHANGE TO THE NAVBAR */
 .navbar{
-    background: rgba(15, 15, 15, 0.9) !important;
+    background: rgba(15, 15, 15, 0.9);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
     border-bottom: 1px solid #000;
 }
