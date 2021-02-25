@@ -1,0 +1,88 @@
+.main {
+    background-color: green;
+    height: 50vh;
+}
+
+.no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.cstext {
+    font-size: 0.85em;
+}
+
+.ratingOverall {
+    font-size: 15px;
+}
+
+.genere {
+    border-right: thin solid rgba(255, 255, 255, 0.808) ;
+    padding-right: 8px;
+
+}
+
+.countDownLists {
+    display: inline-block;
+    font-size: 0.8em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+.countDownLists span {
+    color: white !important;
+    display: block;
+    font-size: 1.3rem;
+}
+#countdown{
+    background: rgba(255, 255, 255, 0.116);
+    border-radius: 4px;
+    max-width: 350px;
+}
+ul{
+    list-style: none;
+}
+
+/* .social-icons {
+    color: #313437;
+    background-color: #fff;
+    text-align: center;
+  } */
+  /* @media (max-width:767px) {
+    .social-icons {
+      padding: 50px 0;
+    }
+  } */
+  
+  .social-icons i {
+    font-size: 15px;
+    display: inline-block;
+    color: #0047ab;
+    /* margin: 0 10px; */
+    padding-top: 5px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #0047ab;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 5px;
+    transition: 0.6s ease all;
+    /* line-height: 60px; */
+  }
+  
+  .social-icons i:hover {
+    display: inline-block;
+    color: rgb(79, 137, 189);
+  }
+  .commentArea{
+    background: rgba(0, 0, 0, 0.5) !important;
+    color: #fff;
+    border: none !important;
+  }
+  .commentSubmit{
+      background-color: #0047ab !important;
+  }
+  .commentSubmit:hover{
+    background-color: #0047abc0 !important;
+}
