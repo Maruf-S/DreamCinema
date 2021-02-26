@@ -4,16 +4,17 @@ const socialsForm = document.querySelector('#socialsForm');
 const preferencesForm = document.querySelector('#preferncesForm');
 const oldEmail = generalForm.querySelector('.oldEmail');
 const phoneNo = generalForm.querySelector('.phoneNumber');
-const newEmail = generalForm.querySelector('.newEmail')
+const newEmail = generalForm.querySelector('.newEmail');
 generalForm.addEventListener('submit', Email_Change);
 
-if(!readLoginCookie())window.location.href = 'Login.html';
+if (!readLoginCookie()) window.location.href = 'Login.html';
 //#region Load old values
 loadExistingData();
-async function loadExistingData(){
-    var user  = await getuser(readLoginCookie());
+async function loadExistingData() {
+    var user = await getuser(readLoginCookie());
     oldEmail.value = user['email'];
-    phoneNo.value = (user['phone'] == undefined) ? '' : user['phone']; 
+    // newEmail.value = user['email'];
+    phoneNo.value = (user['phone'] == undefined) ? '' : user['phone'];
     twitterInput.value = (user['twitter'] == undefined) ? '' : user['twitter']
     instaInput.value = (user['instagram'] == undefined) ? '' : user['instagram']
     newsLetterCheckbox.checked = user['newsLetter'];
@@ -35,10 +36,15 @@ function Email_Change(e) {
                 .then((response) => {
                     switch (response) {
                         case 1:
-                            // alert("Email Change Success");
+                            swal("Success", "Email changed successfully!", "success");
                             //Logout the user
-                            logOutUser();
+                            // logOutUser();
                             break;
+                        case 4:
+
+                            swal("Success", "Changes were successfull", "success");
+                            break;
+
                         case 2:
                             swal("Error!", "Incorrect password", "error");
                             break;
@@ -52,9 +58,9 @@ function Email_Change(e) {
                             //   // code block
                     }
                 }).catch(() => {
-                        // rejection
-                        swal("Error!", "Unknown error occoured!", "error");
-                    });
+                    // rejection
+                    swal("Error!", "Unknown error occoured!", "error");
+                });
         });
 }
 ///////////////////////////////////
@@ -74,7 +80,7 @@ async function PasswordChange(e) {
         (response) => {
             switch (response) {
                 case 1:
-                    swal("Success!", "Password change successful.", "success");
+                    swal("Success!", "Password change successfull.", "success");
                     passwordChangeForm.reset();
                     break;
                 case 2:
@@ -101,7 +107,7 @@ async function socialsChange(e) {
         (response) => {
             switch (response) {
                 case 1:
-                    swal("Success", "Changes were successful", "success");
+                    swal("Success", "Changes were successfull", "success");
                     break;
                 case 10:
                     swal("Error!", "An Unknown error occoured, Please refresh the page!", "error");
@@ -120,7 +126,7 @@ async function preferencesChange(e) {
         (response) => {
             switch (response) {
                 case 1:
-                    swal("Success", "Changes were successful", "success");
+                    swal("Success", "Changes were successfull", "success");
                     break;
                 case 10:
                     swal("Error!", "An Unknown error occoured, Please refresh the page!", "error");
@@ -147,9 +153,9 @@ async function deleteU() {
                     content: "input",
                 }, ).then(pass => {
                     if (pass) {
-                    return deleteUser(readLoginCookie(),pass).then(e =>{
-                        return e;
-                    });
+                        return deleteUser(readLoginCookie(), pass).then(e => {
+                            return e;
+                        });
                     } else {
                         swal("Error!", "Password is required!", "error");
                         return null;

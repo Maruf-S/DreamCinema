@@ -53,6 +53,7 @@ body:after{
 }
 
 .wrapper{
+  width: 100%;
   z-index: 50;
   overflow: hidden;
   max-width: 390px;
@@ -207,7 +208,7 @@ form .btn .btn-layer{
   /* background: -webkit-linear-gradient(left, #add8e6, #4caee3); */
   background: -webkit-linear-gradient(right, #0047ab, #0047abb9, #1e3a94d0, #4caee3);
   border-radius: 5px;
-  transition: all 0.4s ease;;
+  transition: all 0.4s ease;
 }
 form .btn:hover .btn-layer{
   background: -webkit-linear-gradient(right, #0047ab, #0047ab, #1e3a94, #4caee3);

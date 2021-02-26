@@ -3,225 +3,171 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  /* font-family: 'Poppins', sans-serif; */
   margin: 0;
   padding: 0;
   border: 0;
 }
-
-.carouselImage{
+/* header Carousel */
+.headerImage{
+    height: 35rem;
     width: 100%;
-    height: 36rem;
 }
-@media screen and (max-width: 768px) {
-    .carouselImage {
-      height: 25rem;
+@media screen and (max-width: 1300px) {
+    .headerImage{
+        max-height: 35rem;
+        width: 100%;
     }
-  }
-
-.slide{
-  width: 100%;
-}  
-.main-cont {
-  height: fit-content;
 }
 
-.carousel-inner {
-  overflow: hidden;
+@media screen and (max-width: 800px) {
+    .headerImage{
+        max-height: 25rem;
+        width: 100%;
+    }
 }
-.carousel {
-  overflow: hidden;
+  @media screen and (max-width: 500px) {
+    .headerImage{
+        max-height: 20rem;
+        width: 100%;
+    }
 }
 
-.inner {
-  background-color: rgba(0, 0, 0, 0.4);
+
+/* Top shows */
+.topShowsImage{
+    height: 350px;
 }
-.caption {
-  background: rgba(0, 0, 0, 0.45);
+.topShowCard .card-body{
+    height: 8rem;
+    text-align: center;
+}
+.topShowBtn {
+    background-color: orange;
 }
 
-.nav-link {
-  color: white;
-  text-decoration: none;
+.arrow{
+    margin: 1% 0;
+    text-align: center;
 }
+/* First Parallax */
 
 .parallax {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/cine6.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/cine6.jpg);
+    height: 35rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  
 }
 
 .theatre {
-  background: #3334352d;
-  padding-top: 13%;
-  padding-bottom: 10%;
-  color: rgb(255, 255, 255);
-}
-.disButton {
-  background-color: #ffffffda;
-  color: black;
-  border-radius: 10%;
-  font-style: italic;
-}
-.disButton:hover {
-  background-color: #0f1de9;
-  color: rgb(253, 250, 250);
-}
-.bot {
-  margin-top: 2rem;
-  background-color: #0047ab;
-
-  height: 25rem;
-  font-style: italic;
-}
-.botr {
-  padding-top: 8%;
-  color: white;
+    background: #3334352d;
+    padding-top: 13%;
+    padding-bottom: 10%;
+    color: rgb(255, 255, 255);
 }
 
-.botc {
-  height: 8rem;
-  background: #33343549;
-  border: 2px solid, #33343575;
-  border-radius: 50px;
+.parallexBtn {
+    background-color: #ffffffda;
+    color: black;
+    border-radius: 35px;
+    font-style: italic;
 }
-.subscribe {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/subs.jpg);
-  height: 30rem;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-
+.parallexBtn:hover {
+    background-color: #0f1de9;
+    color: rgb(253, 250, 250);
 }
-.adve {
-  color: #e66b1e;
+@media screen and (max-width: 700px) {
+    .theatre {
+        padding-top: 25%;
+        padding-bottom: 10%;
+        
+    }
+    .theatreCol{
+        font-size: 1rem;
+    }
 }
-.sub {
-  color: white;
-  padding-top: 10%;
-}
-.subButton {
-  background-color: red;
-  color: white;
-}
-
-.card-body {
-  height: 100%;
-}
-
-.cont {
-  margin: 0 5%;
-}
-.contt {
-  padding-top: 1rem;
-}
-
-.watch {
-  background-color: orange;
-  margin-left: 30%;
-}
-
-.header {
-  font-style: italic;
-}
-.subInner {
-  width: 30rem;
-}
-
-.carousel-inner {
-  overflow: visible;
-}
-.arow {
-  margin-top: 1%;
-  margin-left: 47%;
-}
-.tvshow {
-  margin-top: 2%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
 /* new items style */
 
 .tabContainer {
-  height: 600px;
-  margin: auto 5%;
+    height: 100%;
+    margin: auto 2%;
 }
 .tabContainer .buttonContainer {
-  height: 10%;
+    height: 50px;
 }
-.stAr {
-  color: yellow;
-}
-.starr {
-  background-color: rgba(0, 0, 0, 0.575);
-  color: rgb(255, 255, 255);
-}
-.likee {
-  background-color: #0f1de9e3;
-  color: white;
-}
-.tabContainer .buttonContainer button {
-  width: 12%;
-  height: 100%;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
 
-  font-family: sans-serif;
-  font-size: 18px;
+.tabContainer .buttonContainer button {
+    width: 12%;
+    height: 100%;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  
+    font-family: sans-serif;
+    font-size: 18px;
 }
 .tabContainer .buttonContainer button:hover {
-  border-bottom: 3px solid #0b3bc0;
+    border-bottom: 3px solid #0b3bc0;
 }
-
+  
 .tabContainer .buttonContainer button:focus {
-  border-bottom: 3px solid #000000;
-  border-radius: 5%;
+    border-bottom: 3px solid #000000;
+    border-radius: 5%;
 }
 .tabContainer .tabPanel {
-  box-sizing: border-box;
-  font-family: sans-serif;
-  font-size: 22px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 22px;
+}
+.tabPanel .card{
+    text-align: center;
+    height: 32rem;
+}
+.tabPanel .card img{
+    height: 26rem;
+
 }
 #button1 {
-  border-right: black solid 1px;
+    border-right: black solid 1px;
 }
 #button2 {
-  border-right: black solid 1px;
+    border-right: black solid 1px;
 }
 #button3 {
-  border-right: black solid 1px;
+    border-right: black solid 1px;
 }
-
-footer {
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-footer a {
-  color: white;
-}
-
-footer a:hover {
-  color: brown;
-  text-decoration: none;
-}
-
-footer i {
-  color: white;
-}
-
 @media screen and (max-width: 1000px) {
-  .counterNum {
-    font-size: 1rem;
-  }
-  .bot {
-    height: 15rem;
-  }
+    .tabContainer .buttonContainer button{
+        width: 5rem;
+    }
 }
+@media screen and (max-width: 500px) {
+    .tabContainer .buttonContainer button{
+        font-size: small;
+        width: 4rem;
+    }
+}
+/* Second Parallex */
+.subscribe {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/subs.jpg);
+    height: 30rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .adve {
+    color: #e66b1e;
+  }
+  .sub {
+    color: white;
+    padding-top: 10%;
+  }
+  .subButton {
+    background-color: red;
+    color: white;
+  }
