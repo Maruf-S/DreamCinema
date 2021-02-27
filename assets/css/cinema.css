@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+*{
+  font-family: 'Quicksand', 'Roboto';
+}
+
 .main {
     background-color: green;
     height: 50vh;
