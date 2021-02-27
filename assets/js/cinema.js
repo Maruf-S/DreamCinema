@@ -59,7 +59,11 @@ document.title = movie['name'];
 postorImage.src = `assets/images/Data/postors/${movie['postor']}`;
 movieTitle.innerText = movie['name'];
 movieRelease.innerText = movie['release'];
+<<<<<<< HEAD
 productionCompany.innerText = ['aired'];
+=======
+productionCompany.innerText = movie['aired'];
+>>>>>>> Cinema-managment
 IDMBrating.innerText = movie['idmbRating'];
 //ADDING GENRES
 var genre = movie['genre'];
@@ -158,6 +162,7 @@ function buyTickets(){
 
 setUpComments();
 
+<<<<<<< HEAD
 function createGuid()  
 //CREATE A GUID TO SERVE AS A "DIGITAL" TICKET
 {  
@@ -168,6 +173,8 @@ function createGuid()
 } 
 var guid = createGuid();
 
+=======
+>>>>>>> Cinema-managment
 // Swal.fire({
 //     imageUrl: `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${guid}`,
 //     imageHeight: 300,
