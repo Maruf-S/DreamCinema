@@ -27,6 +27,19 @@ async function getComments() {
     }
 }
 //#endregion
+
+//#region getMovie
+async function getMovie(movId){
+    return await db.collection('movieDb').doc({ id: movId }).get().then(document => {
+        if (document) {
+            return document;
+        } else {
+            console.log("Page does not exist!");
+            return 6;
+        }
+      })
+}
+//#endregion
 //REGION TICKET MANAGMENT
 
 //Create a GUID per user to serve as a digital ticket
@@ -40,14 +53,15 @@ function createGuid()
 async function buyTicket(email, movId) {
     var guid = createGuid();
     try {
-        await db.collection('comments').add({
-
+        return await db.collection('movieTickets').add({
             movId: movId,
             email: email,
           ticket : guid,
-            date: (`${Date().split(' ')[0]} ${Date().split(' ')[1]} ${Date().split(' ')[2]}, ${Date().split(' ')[3]}`),
+            dateBought: (`${Date().split(' ')[0]} ${Date().split(' ')[1]} ${Date().split(' ')[2]}, ${Date().split(' ')[3]}`),
+        }).then(e =>{
+            //Return the ticket
+            return guid;
         });
-        return guid;
     } catch (error) {
         return false;
         // return `Unknown error occurred${error}`;

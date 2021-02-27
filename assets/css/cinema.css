@@ -15,7 +15,7 @@
 body{
     height: 100%;
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+    /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ); */
 
     /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/Data/covers/godzillaVsKong.jpg'); */
     /* height: 100vh; */
@@ -132,7 +132,7 @@ body{
 #countdown{
     background: rgba(255, 255, 255, 0.116);
     border-radius: 4px;
-    max-width: 350px;
+    max-width: 375px;
 }
 ul{
     list-style: none;

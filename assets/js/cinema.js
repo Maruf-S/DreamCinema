@@ -1,19 +1,3 @@
-const second = 1000,
-minute = second * 60,
-hour = minute * 60,
-day = hour * 24;
-//Get this from the DB latter
-let targetDate = "Mar 4, 2021 00:00:00";
-countDown = new Date(targetDate).getTime();
-setInterval(() => {
-let now = new Date().getTime();
-distance = countDown - now;
-document.getElementById("days").innerText = Math.floor(distance / (day)),
-  document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-  document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-  document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-}, 1000);
-
 var postorImage = document.querySelector(".poster");
 var movieTitle = document.querySelector(".movieTitle");
 var movieRelease = document.querySelector(".releaseDate");
@@ -35,36 +19,42 @@ commentForm.addEventListener('submit',submitComment);
 var allComments;
 var movId;
 var movie;
-function startUp(){
+async function startUp(){
     //Read vid Id from the URL
 const urlParams = new URLSearchParams(window.location.search);
 movId = Number(urlParams.get('id'));
+movie  = await getMovie(movId).then(document =>{
+    if(document !=6 ){
+        //Movie exists
+        //6 is the error code for object doesnot exist
+        return document;
+    }
+    else{
+        //Page not found
+        window.location.href = "404.html"; 
+    }
+})
 allComments = getComments();
-movie = {
-    "id": 111 ,
-    "name":"Maleficent",
-    "desc" : "Maleficent and her goddaughter Aurora begin to question the complex family ties that bind them as they are pulled in different directions by impending nuptials, unexpected allies and dark new forces at play.",
-    "postor": "malificent.jpg",
-    "background":"wallpaper2you_310693.jpg",
-    "trailer": "https://youtu.be/n0OFH4xpPr4",
-    "screening":"Mar 4, 2021 00:00:00",
-    "genre" : [ "Adventure", "Family", "Fantasy"],
-    "idmbRating":"6.6",
-    "aired" : "HBO",
-    "release": "18 October 2019 (USA)",
-    "ticket" : "Available",
-
-}
 document.title = movie['name'];
 postorImage.src = `assets/images/Data/postors/${movie['postor']}`;
+document.querySelector('body').style.cssText = 
+`background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(assets/images/Data/covers/${movie['background']});
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed
+`;
 movieTitle.innerText = movie['name'];
 movieRelease.innerText = movie['release'];
-<<<<<<< HEAD
-productionCompany.innerText = ['aired'];
-=======
 productionCompany.innerText = movie['aired'];
->>>>>>> Cinema-managment
 IDMBrating.innerText = movie['idmbRating'];
+//SetUpRating
+for (let index = 0; index <= parseInt(movie['idmbRating'], 10); index++) {
+    var gen = document.createElement('span');
+    gen.innerHTML = `<i class="fa fa-star px-1"></i>`
+    ratingStarsContainner.appendChild(gen);
+}
+setUpComments();
 //ADDING GENRES
 var genre = movie['genre'];
 genre.forEach(element => {
@@ -76,7 +66,6 @@ genre.forEach(element => {
 movieDesc.innerText = movie['desc'];
 availableTickets.innerText = movie['ticket'];
 trailer.src = movie['trailer'];
-document.querySelector('body').style.background = `background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('assets/images/Data/covers/${movie['background']}');`;
 }
 startUp();
 // alert(id);
@@ -86,9 +75,10 @@ async function setUpComments(){
     //Empty the comment container
     commentsContainer.innerHTML = '';
     allComments = await getComments();
-    numComments.innerText = `(${allComments.length}) Comments`;
+    var commentsLen = 0;
     allComments.forEach(element => {
         if(element['movId']===movId){
+            numComments.innerText = `(${++commentsLen}) Comments`;
             var comU = document.createElement("div");
             comU.innerHTML = `<div class="media my-4">
             <img class="align-self-start rounded-circle mr-3" style="max-width: 64px;" src="https://st3.depositphotos.com/13159112/17145/v/600/depositphotos_171453724-stock-illustration-default-avatar-profile-icon-grey.jpg" alt="User">
@@ -106,20 +96,9 @@ async function submitComment(e){
     e.preventDefault();
     var userName = readLoginCookie();
     var commen = commentArea.value;
-    var date = (`${Date().split(' ')[0]} ${Date().split(' ')[1]} ${Date().split(' ')[2]}, ${Date().split(' ')[3]}`);
-    var comU = document.createElement("div");
     await addComment(userName, movId,commen);
     allComments = await getComments();
-    numComments.innerText = `(${allComments.length}) Comments`;
-    comU.innerHTML = `<div class="media my-4">
-    <img class="align-self-start rounded-circle mr-3" style="max-width: 64px;" src="https://st3.depositphotos.com/13159112/17145/v/600/depositphotos_171453724-stock-illustration-default-avatar-profile-icon-grey.jpg" alt="User">
-    <div class="media-body pl-3 leftBorder">
-      <h5 class="mt-0 text-white">${userName}</h5>
-      ${commen}
-    </div>
-    <div class="text-muted d-inline cstext">${date}</div>
-  </div>  `
-  commentsContainer.appendChild(comU);
+    setUpComments();
 }
 //#endregion
 function buyTickets(){
@@ -133,7 +112,7 @@ function buyTickets(){
       
       swalWithBootstrapButtons.fire({
         title: 'Confirm order',
-        text: "Are you sure you want to buy a ticket to {Movie Name} ?",
+        text: `Are you sure you want to buy a ticket to ${movie['name']} ?`,
         icon: 'info',
         showCancelButton: true,
         cancelButtonText: 'No, cancel',
@@ -141,15 +120,36 @@ function buyTickets(){
         reverseButtons: true
       }).then((result) => {
         if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
-            'Deleted!',
-            'Your file has been deleted.',
-            'success'
-          )}
-        // else if (
-        //   /* Read more about handling dismissals below */
-        //   result.dismiss === Swal.DismissReason.cancel
-        // ) 
+            buyTicket(readLoginCookie(),movie['id']).then(
+                guid =>{
+                    if(guid){
+                        swalWithBootstrapButtons.fire(
+                            'Ticket bought successfully',
+                            `Thankyou for working with us, your digital ticket will be sent to you next as well as a copy to ${readLoginCookie()}`,
+                            'success'
+                          ).then(
+                            e =>{
+                                Swal.fire({
+                                    imageUrl: `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${guid}`,
+                                    imageHeight: 300,
+                                    imageAlt: 'Ticket ID'
+                                  })
+                            }
+                        )
+                    }
+                    else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Sorry, Something went wrong. Please Try again later!',
+                            footer: `<a href='contactUs.html'>Report this issue.</a>`
+                          })
+                }
+                }
+            )
+
+
+        }
         else{
           swalWithBootstrapButtons.fire(
             'Transaction canceled',
@@ -159,32 +159,18 @@ function buyTickets(){
         }
       })
 }
-
-setUpComments();
-
-<<<<<<< HEAD
-function createGuid()  
-//CREATE A GUID TO SERVE AS A "DIGITAL" TICKET
-{  
-   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {  
-      var r = Math.random()*16|0, v = c === 'x' ? r : (r&0x3|0x8);  
-      return v.toString(16);  
-   });  
-} 
-var guid = createGuid();
-
-=======
->>>>>>> Cinema-managment
-// Swal.fire({
-//     imageUrl: `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${guid}`,
-//     imageHeight: 300,
-//     imageAlt: 'Ticket ID'
-//   })
-
-// Swal.fire({
-//     icon: 'error',
-//     title: 'Oops...',
-//     text: 'Sorry, Something went wrong. Please Try again later!',
-//     footer: `<a href='contactUs.html'>Report this issue.</a>`
-//   })
-
+const second = 1000,
+minute = second * 60,
+hour = minute * 60,
+day = hour * 24;
+//Get this from the DB latter
+let targetDate = "Mar 4, 2021 00:00:00";
+countDown = new Date(targetDate).getTime();
+setInterval(() => {
+let now = new Date().getTime();
+distance = countDown - now;
+document.getElementById("days").innerText = Math.floor(distance / (day)),
+  document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+  document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+  document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+}, 1000);
