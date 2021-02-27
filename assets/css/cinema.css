@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+*{
+  font-family: 'Quicksand', 'Roboto';
+}
+
 .main {
     background-color: green;
     height: 50vh;
@@ -10,8 +15,9 @@
 body{
     height: 100%;
     width: 100%;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/Data/covers/godzillaVsKong.jpg');
-    /* background-image: url('../images/Data/covers/godzillaVsKong.jpg'); */
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+
+    /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../images/Data/covers/godzillaVsKong.jpg'); */
     /* height: 100vh; */
     background-repeat: no-repeat;
     background-size: cover;
@@ -100,9 +106,14 @@ body{
 }
 
 .genere {
-    border-right: thin solid rgba(255, 255, 255, 0.808) ;
+    border-right: 2px solid rgba(255, 255, 255, 0.199) ;
     padding-right: 8px;
-
+    color: white;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+.genere:hover{
+  color: #0047ab;
 }
 
 .countDownLists {

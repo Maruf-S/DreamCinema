@@ -4,7 +4,6 @@
   <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-  <title>Some Movie</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -92,21 +91,24 @@
             <div class="col-md-10 ">
               <div class="card trans text-white h-100" style="border: none;">
                 <div class="card-header px-0" style="border: none;">
-                  <h5 class="mb-0  movieTitle">Godzilla vs Kong</h5>
+                  <h5 class="mb-0  movieTitle h3">Godzilla vs Kong</h5>
                 </div>
                 <div class="card-text">
                   <div class="text-muted releaseDate d-inline cstext">Jan. 15, 2021</div>
-                  <div class="d-inline pl-2 cstext" style="color: #0047ab;">HBO Max</div>
+                  <div class="d-inline pl-2 cstext prodCompany" style="color: #0047ab;">HBO Max</div>
                 </div>
                 <i class="bottomBorder pt-3"></i>
                 <div class="card-body px-3">
                   <div class="row py-0">
                     <p class="ratingOverall shadow d-inline">
-                      5.7
+                      0.0
                     </p>
-                    <div class="pl-2 text-warning d-inline">
-                      <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
-                        class="fa fa-star"></i><i class="fa fa-star"></i>
+                    <div class="pl-2 text-warning d-inline ratingStarsContainner">
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
+                      <i class="fa fa-star"></i>
                       </div>
                       <i class="d-block w-100 bottomBorder"></i>
                     </div>
@@ -157,7 +159,7 @@
                 </ul>
               </div>
               <p class="h6 my-3 ">Available Tickets: <span class="availaibleTickets">10</span></p>
-              <button class="btn btn-primary" type="button" class="getTicket">Get Your Seats Now!</button>
+              <button class="btn btn-primary getTicket" type="button" >Get Your Seats Now!</button>
             </div>
           </div>
           <div class="tab-pane" role="tabpanel" id="tab-2">
@@ -173,12 +175,12 @@
     <i class="d-block w-100 bottomBorder"></i>
     <div class="social-icons container-fluid py-3">
       <p class="d-inline pr-2 mr-2 h6 text-white genere">Share</p>
-      <a href="#" class="d-inline fb"><i class="icon fa fa-facebook"></i></a>
-      <a href="#" class="d-inline tw"><i class="icon fa fa-twitter"></i></a>
+      <a href="" class="d-inline fb"><i class="icon fa fa-facebook"></i></a>
+      <a href="" class="d-inline tw"><i class="icon fa fa-twitter"></i></a>
     </div>
     <i class="d-block w-100 bottomBorder"></i>
     <div class="container-fluid my-3">
-      <h1 class="h5 mb-3 commentsNum "><i class="text-white fa fa-user-circle mr-2" style="font-size: large;"></i>(2) Comments</h1>
+      <h1 class="h5 mb-3 "><i class="text-white fa fa-user-circle mr-2" style="font-size: large;"></i> <span class="commentsNum">(2) Comments</span></h1>
       <i class="d-block w-100 bottomBorder"></i>
       <div class="container-fluid comments">
         <div class="media my-4">
@@ -187,6 +189,7 @@
             <h5 class="mt-0 text-white">UserName</h5>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, sapiente voluptatem quod quasi, soluta, ab earum cum optio error omnis odio facilis non repudiandae. Neque amet explicabo deserunt. Harum, a.
           </div>
+          <div class="text-muted d-inline cstext">Jan. 15, 2021</div>
         </div>  
         <div class="media my-4">
           <img class="align-self-start rounded-circle mr-3" style="max-width: 64px;" src="https://st3.depositphotos.com/13159112/17145/v/600/depositphotos_171453724-stock-illustration-default-avatar-profile-icon-grey.jpg" alt="User">
@@ -194,13 +197,14 @@
             <h5 class="mt-0 text-white">UserName</h5>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores, sapiente voluptatem quod quasi, soluta, ab earum cum optio error omnis odio facilis non repudiandae. Neque amet explicabo deserunt. Harum, a.
           </div>
+          <div class="text-muted d-inline cstext">Jan. 15, 2021</div>
         </div>  
       </div>
       <div class="container-fluid my-4">
         <h1 class="h5 text-white"> <i class="fa fa-comments" style="color: #0047ab;"></i> Leave a comment</h1>
         <form id="comment">
           <textarea 
-          class="form-control commentArea my-2" name="Comment" placeholder="Your comment..." rows="7" required value="">
+          class="form-control commentArea my-2" placeholder="Your comment..." rows="7" required>
           </textarea>
           <button class="btn btn-dark mb-2 commentSubmit"  type="submit">Post Comment</button>
         </form>
@@ -271,30 +275,16 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script> -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
   </script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <script src="assets/js/navbar.js"></script>
   <script src="assets/js/Backend/Login_Signup.js"></script>
-  <script>
-    const second = 1000,
-      minute = second * 60,
-      hour = minute * 60,
-      day = hour * 24;
-    //Get this from the DB latter
-    let targetDate = "Sep 30, 2021 00:00:00";
-    countDown = new Date(targetDate).getTime();
-    setInterval(() => {
-      let now = new Date().getTime();
-      distance = countDown - now;
-      document.getElementById("days").innerText = Math.floor(distance / (day)),
-        document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
-        document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
-        document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
-    }, 1000);
-  </script>
+  <script src="assets/js/Backend/cinemaManagment.js"></script>
+  <script src="assets/js/cinema.js"></script>
 </body>
 
 </html>

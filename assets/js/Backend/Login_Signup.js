@@ -1,4 +1,4 @@
-let db = new Localbase('DreamCinema');
+var db = new Localbase('DreamCinema');
 //#region SignUp
 async function SignUpUser(email, password) {
     //1,2,10 are error codes
@@ -176,7 +176,6 @@ async function Changepreferences(email,newsLetter){
     }).then((e) =>{
             console.log("CHANGE SUCCESSfUL");
             return 1;
-            deleteU
             //return "Operation successful";
         }
     ).catch(error => {
