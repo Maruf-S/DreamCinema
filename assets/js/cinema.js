@@ -31,11 +31,12 @@ movie  = await getMovie(movId).then(document =>{
     }
     else{
         //Page not found
-        window.location.href = "404.html"; 
+        window.location.href = "404.html";
+
     }
 })
 allComments = getComments();
-document.title = movie['name'];
+document.title = `${movie['name']} | Dream Cinema` ;
 postorImage.src = `assets/images/Data/postors/${movie['postor']}`;
 document.querySelector('body').style.cssText = 
 `background:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(assets/images/Data/covers/${movie['background']});
@@ -49,7 +50,7 @@ movieRelease.innerText = movie['release'];
 productionCompany.innerText = movie['aired'];
 IDMBrating.innerText = movie['idmbRating'];
 //SetUpRating
-for (let index = 0; index <= parseInt(movie['idmbRating'], 10); index++) {
+for (let index = 0; index < parseInt(movie['idmbRating'], 10); index++) {
     var gen = document.createElement('span');
     gen.innerHTML = `<i class="fa fa-star px-1"></i>`
     ratingStarsContainner.appendChild(gen);
@@ -68,9 +69,6 @@ availableTickets.innerText = movie['ticket'];
 trailer.src = movie['trailer'];
 }
 startUp();
-// alert(id);
-// ?id=${cursor.value.id}
-//#region COMMENTS
 async function setUpComments(){
     //Empty the comment container
     commentsContainer.innerHTML = '';
@@ -95,6 +93,9 @@ async function setUpComments(){
 async function submitComment(e){
     e.preventDefault();
     var userName = readLoginCookie();
+    if(!readLoginCookie()){
+        userName = "Anonymous user"
+    }
     var commen = commentArea.value;
     await addComment(userName, movId,commen);
     allComments = await getComments();
@@ -102,6 +103,11 @@ async function submitComment(e){
 }
 //#endregion
 function buyTickets(){
+    if(!readLoginCookie()){
+        //User not logged in? send him to the login page
+        window.location.href ='Login.html?LogReq=1';
+        return;
+    }
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success mx-2',
@@ -130,9 +136,16 @@ function buyTickets(){
                           ).then(
                             e =>{
                                 Swal.fire({
+                                    html:
+                                    `<div>Ticket ID : <b>${guid}</b></div>
+                                    <div class="alert alert-warning mt-2" role="alert">
+                                    Please <span style='color: red;'>do not</span> share this QR code or ticket ID with anyone and Make sure to have a copy of this with you when you visit us, hope you catch a great show :)
+                                    </div>
+                                    `,
                                     imageUrl: `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${guid}`,
+                                    imageWidth: 300,
                                     imageHeight: 300,
-                                    imageAlt: 'Ticket ID'
+                                    imageAlt: 'Ticket ID',
                                   })
                             }
                         )

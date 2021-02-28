@@ -1,3 +1,27 @@
+//Check if the user was sent from another page to login first
+
+const urlParams = new URLSearchParams(window.location.search);
+intent = Number(urlParams.get('LogReq'));
+if(intent==1){
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'bottom-end',
+    showConfirmButton: false,
+    timer: 1600,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+      toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+  })
+  
+  Toast.fire({
+    icon: 'info',
+    title: 'You need to login for this action.'
+  })
+}
+
+
 const loginText = document.querySelector(".title-text .login");
 const loginForm = document.querySelector("form.login");
 const loginBtn = document.querySelector("label.login");

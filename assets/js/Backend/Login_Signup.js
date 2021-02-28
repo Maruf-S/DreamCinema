@@ -2,8 +2,8 @@ var db = new Localbase('DreamCinema');
 
 //#region populateTheMovieDatabase
 async function checkDbExistance() {
-    var x = await db.collection('movieDb').get().then(users => {
-        return (users.length)
+    var x = await db.collection('movieDb').get().then(movies => {
+        return (movies.length)
     });
     
     if (x < 10) {

@@ -38,14 +38,14 @@ body {
     letter-spacing: 10px;
     margin: 0px;
     font-weight: 700;
-    text-shadow: 2px 2px 0px #868258, -2px -2px 0px #c9c9c9;
+    text-shadow: 2px 2px 0px #0047ab, -2px -2px 0px #fff;
   }
   
   
   
   .notfound p {
     font-family: 'Josefin Sans', sans-serif;
-    color: #c9c9c9;
+    color: #fff;
     font-size: 16px;
     font-weight: 400;
     margin-top: 0px;
@@ -58,8 +58,8 @@ body {
     text-decoration: none;
     text-transform: uppercase;
     background: transparent;
-    color: #c9c9c9;
-    border: 2px solid #c9c9c9;
+    color: #fff;
+    border: 2px solid #fff;
     display: inline-block;
     padding: 10px 25px;
     font-weight: 700;
@@ -67,8 +67,8 @@ body {
   }
   
   .notfound a:hover {
-    color: #868258;
-    border-color:#868258;
+    color: #0047ab;
+    border-color:#0047ab;
   }
   
   @media only screen and (max-width: 480px) {
