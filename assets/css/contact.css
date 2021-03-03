@@ -10,6 +10,7 @@
 body{
     
     background-image: url("../images/background/contactbg1.jpg");
+    overflow-x: hidden;
 }
 
 .contact{
@@ -98,7 +99,7 @@ body{
     color: #fff;
 }
 .container .contactInfo .box  .text a:hover{
-    color: rgb(95, 27, 27)
+    color: rgb(129, 173, 8)
 }
 
 .contactForm {
@@ -170,6 +171,24 @@ body{
     cursor: pointer;
     padding: 10px;
     font-size: 18px;
+}
+
+@media(max-width: 1200px){
+    .container{
+        overflow-x: hidden;
+    }
+    .contactForm{
+        width: 500px;
+    }
+}
+
+@media(max-width: 520px){
+    .contactForm{
+        width: 120%;
+    }
+    .contactInfo{
+        margin-right: 50%;
+    }
 }
 
 @media(max-width: 991px){

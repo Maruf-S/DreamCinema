@@ -2,7 +2,14 @@
     margin-top: 0px;
     width: 100%;
     height: 35rem;
+    align-items: center;
 }
+
+.text-block{
+    position: absolute;
+    top: 30%;
+}
+
 iframe{
     width: 100%;
     height: 500px;
