@@ -72,10 +72,20 @@ const cfrmPsw = passwordChangeForm.querySelector('.cfrmPsw');
 passwordChangeForm.addEventListener('submit', PasswordChange);
 async function PasswordChange(e) {
     e.preventDefault();
+    var varidationRegx = /^[a-zA-Z0-9_.-]*$/
+    if(!((cfrmPsw.value.length<64 || newPsw.value.length<64)&&((cfrmPsw.value.length>8 || newPsw.value.length>8)))){
+      swal("Error!", "Password length has to be between 8 and 64!", "error");
+      return;
+    }
+    if(!(varidationRegx.test(newPsw.value) && varidationRegx.test(cfrmPsw.value))){
+      swal("Error!", "Password can only contain Letters, numbers, underscores(_), dashes(-), and points(.)!", "error");
+      return;
+    }
     if (!(newPsw.value === cfrmPsw.value)) {
         swal("Error!", "Password and confirm password do not match!", "error");
         return;
     }
+
     await ChangePassword(readLoginCookie(), currentPsw.value, newPsw.value).then(
         (response) => {
             switch (response) {
