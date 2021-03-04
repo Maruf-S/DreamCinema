@@ -55,7 +55,15 @@ signUpForm.addEventListener('submit', addUser);
 
 async function addUser(e){
   e.preventDefault();
-  console.log(signUpForm);
+  var varidationRegx = /^[a-zA-Z0-9_.-]*$/
+  if(!((signUpConfirmPassword.value.length<64 || signUpPassword.value.length<64)&&((signUpConfirmPassword.value.length>8 || signUpPassword.value.length>8)))){
+    swal("Error!", "Password length has to be between 8 and 64!", "error");
+    return;
+  }
+  if(!(varidationRegx.test(signUpPassword.value) && varidationRegx.test(signUpConfirmPassword.value))){
+    swal("Error!", "Password can only contain Letters, numbers, underscores(_), dashes(-), and points(.)!", "error");
+    return;
+  }
   if(!(signUpConfirmPassword.value===signUpPassword.value)){
     swal("Error!", "Password and confirm password do not match!", "error");
     return;
@@ -65,13 +73,6 @@ async function addUser(e){
     case 1:
       await SignInUser(signUpEmail.value,signUpPassword.value);
       window.location.href = 'index.html';
-      // alert("Successfully signedUpUser");
-      // Swal.fire({
-      //   icon: 'error',
-      //   title: 'Oops...',
-      //   text: 'Something went wrong!',
-      //   footer: '<a href>Why do I have this issue?</a>'
-      // })
       break;
     case 2:
       swal("Error!", "This email already belongs to an account!", "error");

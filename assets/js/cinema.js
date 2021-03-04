@@ -45,6 +45,10 @@ background-size: cover;
 background-position: center;
 background-attachment: fixed
 `;
+if(movie['ticket']!=="Available"){
+  //You can't buy the tickets
+  buyTicketsButton.style.display = "none";
+}
 movieTitle.innerText = movie['name'];
 movieRelease.innerText = movie['release'];
 productionCompany.innerText = movie['aired'];
@@ -176,8 +180,8 @@ const second = 1000,
 minute = second * 60,
 hour = minute * 60,
 day = hour * 24;
-//Get this from the DB latter
-let targetDate = "Mar 4, 2021 00:00:00";
+//Even though screening dates are stored on the database since the databases are static we''ve decided to load a demo
+let targetDate = "Mar 9, 2021 04:00:00";
 countDown = new Date(targetDate).getTime();
 setInterval(() => {
 let now = new Date().getTime();
